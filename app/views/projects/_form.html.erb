@@ -1,0 +1,31 @@
+<%= form_with(model: project, class: "row g-3") do |form| %>
+  <% if project.errors.any? %>
+    <div class="alert alert-danger">
+      <p class="mb-1"><strong><%= pluralize(project.errors.count, "error") %> prevented saving:</strong></p>
+      <ul class="mb-0">
+        <% project.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="col-12">
+    <%= form.label :name, class: "form-label" %>
+    <%= form.text_field :name, class: "form-control", placeholder: "Project name (e.g., TasteTrail App)" %>
+  </div>
+
+  <div class="col-12">
+    <%= form.label :description, class: "form-label" %>
+    <%= form.text_area :description, rows: 5, class: "form-control", placeholder: "Short description of the project…" %>
+  </div>
+
+  <div class="col-12 d-flex gap-2">
+    <%= form.submit class: "btn btn-primary" %>
+    <%= link_to "Cancel",
+    (project.persisted? ? project_path(project) : projects_path),
+    class: "btn btn-outline-secondary" %>
+
+
+  </div>
+<% end %>

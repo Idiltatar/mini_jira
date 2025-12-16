@@ -1,0 +1,23 @@
+current directory: /Users/idiltatar/mini_jira/vendor/bundle/ruby/3.4.0/gems/bootsnap-1.19.0/ext/bootsnap
+/opt/homebrew/opt/ruby/bin/ruby extconf.rb
+checking for fdatasync() in unistd.h... yes
+checking for whether -D_GNU_SOURCE is accepted as CPPFLAGS... yes
+checking for whether -O3 is accepted as CFLAGS... yes
+checking for whether -std=c99 is accepted as CFLAGS... yes
+creating Makefile
+
+current directory: /Users/idiltatar/mini_jira/vendor/bundle/ruby/3.4.0/gems/bootsnap-1.19.0/ext/bootsnap
+make DESTDIR\= sitearchdir\=./.gem.20251216-2825-od27ci sitelibdir\=./.gem.20251216-2825-od27ci clean
+
+current directory: /Users/idiltatar/mini_jira/vendor/bundle/ruby/3.4.0/gems/bootsnap-1.19.0/ext/bootsnap
+make DESTDIR\= sitearchdir\=./.gem.20251216-2825-od27ci sitelibdir\=./.gem.20251216-2825-od27ci
+compiling bootsnap.c
+linking shared-object bootsnap/bootsnap.bundle
+ld: warning: search path '/opt/homebrew/Cellar/openssl@3/3.5.2/lib' not found
+
+current directory: /Users/idiltatar/mini_jira/vendor/bundle/ruby/3.4.0/gems/bootsnap-1.19.0/ext/bootsnap
+make DESTDIR\= sitearchdir\=./.gem.20251216-2825-od27ci sitelibdir\=./.gem.20251216-2825-od27ci install
+/usr/bin/install -c -m 0755 bootsnap.bundle ./.gem.20251216-2825-od27ci/bootsnap
+
+current directory: /Users/idiltatar/mini_jira/vendor/bundle/ruby/3.4.0/gems/bootsnap-1.19.0/ext/bootsnap
+make DESTDIR\= sitearchdir\=./.gem.20251216-2825-od27ci sitelibdir\=./.gem.20251216-2825-od27ci clean

@@ -1,0 +1,47 @@
+<div class="d-flex justify-content-between align-items-center mb-3">
+  <div>
+    <h1 class="h3 mb-1"><%= @project.name %></h1>
+    <p class="text-muted mb-0"><%= simple_format(@project.description) %></p>
+  </div>
+  <div class="d-flex gap-2">
+    <%= link_to "Edit Project", edit_project_path(@project), class: "btn btn-outline-primary" %>
+    <%= link_to "Back", projects_path, class: "btn btn-outline-secondary" %>
+  </div>
+</div>
+
+<div class="card shadow-sm mb-3">
+  <div class="card-header d-flex justify-content-between align-items-center">
+    <strong>Issues</strong>
+    <%= link_to "New Issue", new_project_issue_path(@project), class: "btn btn-sm btn-primary" %>
+  </div>
+
+  <div class="table-responsive">
+    <table class="table table-hover align-middle mb-0">
+      <thead class="table-light">
+        <tr>
+          <th>Title</th>
+          <th>Status</th>
+          <th>Priority</th>
+          <th>Assignee</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @project.issues.each do |issue| %>
+          <tr>
+            <td><%= link_to issue.title, [@project, issue] %></td>
+            <td><%= status_badge(issue.status) %></td>
+            <td><%= priority_badge(issue.priority) %></td>
+            <td><%= issue.user&.email || "-" %></td>
+            <td class="text-end">
+              <%= link_to "Edit", edit_project_issue_path(@project, issue), class: "btn btn-sm btn-outline-primary" %>
+              <%= button_to "Delete", project_issue_path(@project, issue), method: :delete,
+                    form: { data: { turbo_confirm: "Delete this issue?" } },
+                    class: "btn btn-sm btn-outline-danger" %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

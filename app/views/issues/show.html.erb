@@ -1,0 +1,19 @@
+<div class="d-flex justify-content-between align-items-center mb-3">
+  <h1 class="h4 mb-0"><%= @issue.title %></h1>
+  <div class="d-flex gap-2">
+    <%= link_to "Edit", edit_project_issue_path(@project, @issue), class: "btn btn-outline-primary" %>
+    <%= link_to "Back", project_path(@project), class: "btn btn-outline-secondary" %>
+  </div>
+</div>
+
+<div class="card shadow-sm">
+  <div class="card-body">
+    <div class="mb-3">
+      <strong>Status:</strong> <%= status_badge(@issue.status) %>
+      <strong class="ms-3">Priority:</strong> <%= priority_badge(@issue.priority) %>
+      <strong class="ms-3">Assignee:</strong> <%= @issue.user&.email || "-" %>
+    </div>
+    <hr>
+    <%= simple_format(@issue.description.presence || "No description.") %>
+  </div>
+</div>
