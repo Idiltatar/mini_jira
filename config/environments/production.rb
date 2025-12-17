@@ -22,10 +22,9 @@ Rails.application.configure do
   config.silence_healthcheck_path = "/up"
   config.active_support.report_deprecations = false
 
-  # ✅ SAFE defaults for Render free tier
+  # ✅ Render free tier safe defaults
   config.cache_store = :memory_store
   config.active_job.queue_adapter = :async
-  config.action_cable.adapter = :async
 
   config.action_mailer.default_url_options = { host: "example.com" }
 
